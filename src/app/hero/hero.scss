@@ -1,0 +1,518 @@
+
+:host {
+    display: block;
+}
+.body{
+    height: 195vh;
+    background-color: #000;
+}
+.vidholder{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #000;
+
+    .video{
+        width: 120%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        video {
+            display: block;
+        }
+    }
+    .serv{
+        position: absolute;
+        top:100vh;
+        left: 10%;
+        width: 67%;
+        height: 80%;
+        z-index: 4;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        .circle {
+            position: absolute;
+            z-index: 455;
+            width: 90px;
+            height: 90px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .ser{
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            .card-link {
+                position: absolute;
+                inset: 0;
+                z-index: 5;
+            }
+            .explore{
+                display: flex;
+                align-items: center;
+                transition: background 0.3s ease;
+                height: 20%;
+                border: 1px solid transparent;
+                border-radius: 8px;
+                background:
+                    linear-gradient(rgb(39, 39, 39), rgb(39, 39, 39)) padding-box,
+                    linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(65,65,65,0.4), rgba(255,255,255,0.35)) border-box;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                width: 30%;
+                margin-top: 15px;
+                gap: 15px;
+                z-index: 6;
+                &:hover{
+                    background:
+                        linear-gradient(rgb(50, 50, 50), rgb(50, 50, 50)) padding-box,
+                        linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(100,100,100,0.5), rgba(255,255,255,0.6)) border-box;
+                        z-index: 6;
+                }
+            }
+            path {
+                transition: stroke 0.4s ease;
+            }
+            &:hover path{
+                stroke: #9e2f2f;
+            }
+            a{
+                text-decoration: none;
+                color: wheat;
+            }
+            p{
+                color: aliceblue;
+                position: relative;
+                z-index: 2;
+            }
+            .wraper_1{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 0;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .web{
+            border-right: solid 1px rgb(61, 57, 57);
+            border-bottom: solid 1px rgb(61, 57, 57);
+            overflow: hidden;
+
+        }
+        .chat{
+            border-bottom: solid 1px rgb(61, 57, 57);
+            overflow: hidden;
+        }
+        .ai{
+            border-right: solid 1px rgb(61, 57, 57);
+        }
+    }
+}
+
+@media screen and (max-width: 400px){
+    .headholder{
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #080808;
+        border: none;
+        outline: none;
+        margin: 0;
+        padding: 10px;
+        padding-top: 15px;
+        padding-right: 20px;
+    }
+    .vidholder{
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        .main{
+            display: none;
+        }
+        .headholder{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+        .video{
+            width: 600px;
+            left: 25%;
+            transform: translate(-25%);
+        }
+        .serv{
+            position: absolute;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            top: 230px;
+            left: 5%;
+            width: 90%;
+            height: 1000px;
+            gap: 10px;
+            .web, .chat, .ai {
+                border-right: none;
+                border-bottom: solid 1px rgb(111, 23, 179);
+            }
+        }
+        .circle{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width:401px) and (max-width: 599px){
+    .headholder{
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #080808;
+        border: none;
+        outline: none;
+        margin: 0;
+        padding: 10px;
+        padding-top: 15px;
+        padding-right: 20px;
+    }
+    .vidholder{
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        .main{
+            display: none;
+        }
+        .headholder{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+        .video{
+            width: 900px;
+            left: 25%;
+            transform: translate(-25%);
+        }
+        .serv{
+            position: absolute;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            top: 350px;
+            left: 5%;
+            width: 90vw;
+            height: 1000px;
+            gap: 10px;
+            .web, .chat, .ai {
+                border-right: none;
+                border-bottom: solid 1px rgb(111, 23, 179);
+            }
+        }
+        .circle{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width:600px) and (max-width: 764px){
+    .headholder{
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #080808;
+        border: none;
+        outline: none;
+        margin: 0;
+        padding: 10px;
+        padding-top: 15px;
+        padding-right: 20px;
+    }
+    .vidholder{
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        .main{
+            display: none;
+        }
+        .headholder{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+        .video{
+            width: 1100px;
+            left: 45%;
+            transform: translate(-45%);
+        }
+        .serv{
+            position: absolute;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            top: 420px;
+            left: 5%;
+            width: clamp(530px, 80%, 590px);
+            height: 1000px;
+            .chat{
+                border-radius: 15px;
+            }
+            .web, .chat, .ai {
+                border-right: none;
+                border-bottom: solid 1px rgb(111, 23, 179);
+            }
+        }
+        .circle{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width:765px) and (max-width: 899px){
+    .headholder{
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #080808;
+        border: none;
+        outline: none;
+        margin: 0;
+        padding: 10px;
+        padding-top: 15px;
+        padding-right: 20px;
+    }
+    .vidholder{
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        .main{
+            display: none;
+        }
+        .headholder{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+        .video{
+            width: 1100px;
+            left: 45%;
+            transform: translate(-45%);
+        }
+        .serv{
+            position: absolute;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            top: 420px;
+            left: 5%;
+            width: 73%;
+            height: 1000px;
+            .web, .chat, .ai {
+                border-right: none;
+                border-bottom: solid 1px rgb(111, 23, 179);
+            }
+        }
+        .circle{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width:900px) and (max-width: 1024px){
+    .headholder{
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: #080808;
+        border: none;
+        outline: none;
+        margin: 0;
+        padding: 10px;
+        padding-top: 15px;
+        padding-right: 20px;
+    }
+    .vidholder{
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        .main{
+            display: none;
+        }
+        .headholder{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+        .video{
+            width: 1100px;
+            left: 45%;
+            transform: translate(-45%);
+        }
+        .serv{
+            position: absolute;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            top: 420px;
+            left: 5%;
+            width: 69%;
+            height: 1000px;
+            .web, .chat, .ai {
+                border-right: none;
+                border-bottom: solid 1px rgb(111, 23, 179);
+            }
+        }
+        .circle{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width:1025px) and (max-width: 1134px){
+    .vidholder{
+        .video{
+            width: 1500px;
+        }
+        .serv{
+            top: 570px;
+            width: 75%;
+            left: 5%;
+        }
+    }
+}
+
+@media screen and (min-width:1135px) and (max-width: 1200px){
+    .vidholder{
+        .video{
+            width: 1500px;
+        }
+        .serv{
+            top: 570px;
+            width: 72%;
+            left: 5%;
+        }
+    }
+}
+
+@media screen and (min-width:1201px) and (max-width: 1300px){
+    .vidholder{
+        .video{
+            width: 1500px;
+        }
+        .serv{
+            top: 570px;
+            width: 70%;
+            left: 5%;
+        }
+    }
+}
+
+@media screen and (min-width:1301px) and (max-width: 1400px){
+    .vidholder{
+        .video{
+            width: 1500px;
+        }
+        .serv{
+            top: 570px;
+            width: 68%;
+            left: 5%;
+        }
+
+    }
+}
+
+@media screen and (min-width:1401px) and (max-width: 1500px){
+    .vidholder{
+        .video{
+            width: 1500px;
+        }
+        .serv{
+            top: 570px;
+            width: 66%;
+            left: 5%;
+        }
+
+    }
+}
+
+@media screen and (min-width:1501px) and (max-width: 1600px){
+    .vidholder{
+        .video{
+            width:1900px;
+        }
+        .serv{
+            top: 735px;
+            width: 65%;
+            left: 11%;
+        }
+
+    }
+}
+
+@media screen and (min-width:1601px) and (max-width: 1700px){
+    .vidholder{
+        .video{
+            width: 2000px;
+        }
+        .serv{
+            top: 760px;
+            width: 70%;
+            left: 5%;
+        }
+
+    }
+}
+
+@media screen and (min-width:1701px) and (max-width: 1800px){
+    .vidholder{
+        .video{
+            width: 2200px;
+        }
+        .serv{
+            top: 835px;
+            width: 75.5%;
+            left: 5%;
+        }
+
+    }
+}
+
+@media screen and (min-width:1801px) and (max-width: 1900px){
+    .vidholder{
+        .video{
+            width: 2200px;
+        }
+        .serv{
+            top: 835px;
+            width: 70%;
+            left: 5%;
+        }
+
+    }
+}
+
+
+@media screen and (min-width:1901px) and (max-width: 2000px){
+    .vidholder{
+        .video{
+            width: 130%;
+        }
+        .serv{
+            top: 100%;
+            width: 68%;
+            left: 9.5%;
+        }
+    }
+}
