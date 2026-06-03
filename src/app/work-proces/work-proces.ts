@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy, inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import * as d3 from 'd3';
 import * as topojson from 'topojson-client';
@@ -11,17 +11,75 @@ import * as topojson from 'topojson-client';
 })
 export class WorkProces implements AfterViewInit, OnDestroy {
   @ViewChild('c') private canvasRef!: ElementRef<HTMLCanvasElement>;
+  @ViewChild('textContainer') private textRef!: ElementRef<HTMLElement>;
+  @ViewChild('marqueeTrack') private marqueeTrackRef!: ElementRef<HTMLElement>;
+  @ViewChild('setOne') private setOneRef!: ElementRef<HTMLElement>;
 
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly renderer = inject(Renderer2);
   private rafId: number | null = null;
+  private marqueeRafId: number | null = null;
+  private observer: IntersectionObserver | null = null;
 
   async ngAfterViewInit(): Promise<void> {
     if (!isPlatformBrowser(this.platformId)) return;
+    this.initTextAnimation();
+    this.initMarquee();
     await this.initGlobe();
   }
 
   ngOnDestroy(): void {
     if (this.rafId !== null) cancelAnimationFrame(this.rafId);
+    if (this.marqueeRafId !== null) cancelAnimationFrame(this.marqueeRafId);
+    this.observer?.disconnect();
+  }
+
+  private initTextAnimation(): void {
+    const el = this.textRef.nativeElement;
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.renderer.addClass(el, 'animate');
+          this.observer!.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    this.observer.observe(el);
+  }
+
+  private initMarquee(): void {
+    const track = this.marqueeTrackRef.nativeElement;
+    const setOne = this.setOneRef.nativeElement;
+
+    setTimeout(() => {
+      const container = track.parentElement!;
+      const containerWidth = container.offsetWidth;
+      const setWidth = setOne.offsetWidth;
+
+      // Clone sets until the track is wider than container + one set
+      while (track.offsetWidth < containerWidth + setWidth) {
+        track.appendChild(setOne.cloneNode(true));
+      }
+
+      const SPEED = 80; // px per second
+      let pos = 0;
+      let lastTs: number | null = null;
+
+      const tick = (ts: number) => {
+        if (lastTs === null) lastTs = ts;
+        const dt = (ts - lastTs) / 1000;
+        lastTs = ts;
+
+        pos -= SPEED * dt;
+        if (pos <= -setWidth) pos += setWidth;
+
+        track.style.transform = `translateX(${pos}px)`;
+        this.marqueeRafId = requestAnimationFrame(tick);
+      };
+
+      this.marqueeRafId = requestAnimationFrame(tick);
+    }, 0);
   }
 
   private async initGlobe(): Promise<void> {
