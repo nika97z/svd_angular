@@ -1,1 +1,60 @@
-<p>webdev works!</p>
+<app-aichatbot></app-aichatbot>
+<div class="main">
+    <div class="webdev">
+        <div class="header">
+            <div class="logo">
+                <svg viewBox="0 0 57 92" fill="black" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.7629 38.8956L28.3032 42.4264L31.834 38.8861L28.2937 35.3553L24.7629 38.8956Z" />
+                    <path d="M28.3032 42.4264L31.8434 45.9572L35.3742 42.4169L31.834 38.8861L28.3032 42.4264Z"/>
+                    <path d="M31.8434 45.9572L35.3837 49.488L38.9145 45.9477L35.3742 42.4169L31.8434 45.9572Z" />
+                    <path d="M28.3126 49.4974L24.7818 53.0377L28.3221 56.5685L31.8529 53.0282L28.3126 49.4974Z" />
+                    <path d="M21.2416 49.5069L24.7724 45.9666L21.2321 42.4358L17.7013 45.9761L21.2416 49.5069Z" />
+                    <path d="M24.7818 53.0377L28.3126 49.4974L24.7724 45.9666L21.2416 49.5069L24.7818 53.0377Z" />
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.98023e-07 28.3221L28.2464 -8.9407e-07L56.5685 28.2464L45.9761 38.8672L42.4358 35.3364L45.9666 31.7961L49.4974 28.2559L28.2559 7.07106L7.07106 28.3126L21.2321 42.4358L17.7013 45.9761L2.98023e-07 28.3221Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7629 38.8956L14.1421 28.3032L28.2653 14.1421L42.4264 28.2653L38.9215 31.7796L35.3553 28.2748L28.2748 21.2132L21.2132 28.2937L28.2937 35.3553L24.7629 38.8956Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M42.4737 63.6206L28.3504 77.7817L14.1894 63.6585L17.7202 60.1182L21.2605 63.649L28.341 70.7106L35.4026 63.6301L28.3221 56.5685L31.8529 53.0282L42.4737 63.6206Z"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M56.6158 63.6017L28.3694 91.9238L0.0472847 63.6774L10.6397 53.0566L14.18 56.5874L10.6491 60.1277L7.11835 63.6679L28.3599 84.8527L49.5447 63.6112L35.3837 49.488L38.9145 45.9477L56.6158 63.6017Z"/>
+                    <path d="M14.1894 63.6585L17.7202 60.1182L14.18 56.5874L10.6491 60.1277L14.1894 63.6585Z" />
+                    <path d="M42.4264 28.2653L38.9215 31.7796L42.4358 35.3364L45.9666 31.7961L42.4264 28.2653Z"/>
+                </svg>
+                <p>SVD pixel</p>
+            </div>
+            <div class="burgermain">
+                <div class="burger" [class.active]="isMenuOpen()" (click)="toggleMenu()">
+                    <ul>
+                        <li class="line1"></li>
+                        <li class="line2"></li>
+                        <li class="line3"></li>
+                    </ul>
+                </div>
+                <div class="nav-links" [style.height]="isMenuOpen() ? '100vh' : '0px'">
+                    <ul>
+                        <li><a routerLink="/">Home</a></li>
+                        <li><a routerLink="/ai-chatbot">AI Chatbot</a></li>
+                        <li><a routerLink="/ai-automation">AI Automatization</a></li>
+                        <li><a routerLink="/book-a-table">BOOK A TABLE</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main1">
+                <h2>Custom Websites That Drive Results</h2>
+            </div>  
+            <div class="main2">
+                <div class="main21">
+                    <p>WEBSITE</p>
+                    <p>DESIGN</p>
+                </div>
+                <div class="main22">
+                    <p>AND</p>
+                    <p>DEVELOPMENT</p>
+                </div>
+            </div>
+            <div class="main3">
+                <p>ABOUT SERVICE </p>
+            </div>
+        </div>
+    </div>
+</div>
+

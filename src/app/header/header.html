@@ -9,11 +9,15 @@
     </div>
     <div class="nav-links" [style.height]="isMenuOpen() ? '100vh' : '0px'">
         <ul>
-            <li><a href="./menu.html">Web Development</a></li>
-            <li><a href="./about.html">AI Chatbot</a></li>
-            <li><a href="./about.html#contactid">AI Automatization</a></li>
-            <li><a href="./table.html">BOOK A TABLE</a></li>
+            <li><a routerLink="/web-development">Web Development</a></li>
+            <li><a routerLink="/ai-chatbot">AI Chatbot</a></li>
+            <li><a routerLink="/ai-automation">AI Automatization</a></li>
+            <li><a routerLink="/book-a-table">BOOK A TABLE</a></li>
         </ul>
+        <button class="close-btn" (click)="toggleMenu()" aria-label="Close menu">
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </div>
 
@@ -23,9 +27,9 @@
             <h1>NZ</h1>
         </div>
         <div class="services">
-            <a href="">Web Development</a>
-            <a href="">AI Chatbot</a>
-            <a href="">AI Automatization</a>
+            <a routerLink="/web-development">Web Development</a>
+            <a routerLink="/ai-chatbot">AI Chatbot</a>
+            <a routerLink="/ai-automation">AI Automatization</a>
         </div>
     </div>
     <div class="header2">
