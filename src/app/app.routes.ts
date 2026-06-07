@@ -2,13 +2,14 @@ import { Routes } from '@angular/router';
 import { Main } from './main/main';
 import { Ss } from './ss/ss';
 import { Webdev } from './webdev/webdev';
-import { Aichatbot, } from './aichatbot/aichatbot';
-
+import { Automatization } from './automatization/automatization';
+import { Chb } from './chb/chb';
 
 export const routes: Routes = [
     { path: '', component: Main },
     { path: 'ss', component: Ss },
     { path: 'web-development', component: Webdev},
-    { path: 'ai-chatbot', component: Aichatbot},
+    { path: 'ai-automatization', component: Automatization},
+    { path: 'chatbot', component: Chb}
 ];
 

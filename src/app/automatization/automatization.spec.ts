@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Aichatbot } from './aichatbot';
+import { Automatization } from './automatization';
 
-describe('Aichatbot', () => {
-  let component: Aichatbot;
-  let fixture: ComponentFixture<Aichatbot>;
+describe('Automatization', () => {
+  let component: Automatization;
+  let fixture: ComponentFixture<Automatization>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Aichatbot],
+      imports: [Automatization],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Aichatbot);
+    fixture = TestBed.createComponent(Automatization);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
