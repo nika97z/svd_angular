@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Aichatbot } from "../aichatbot/aichatbot";
+import { Atom } from '../atom/atom';
 
 
 @Component({
   selector: 'app-webdev',
-  imports: [RouterLink, Aichatbot],
+  imports: [RouterLink, Atom],
   templateUrl: './webdev.html',
   styleUrl: './webdev.scss',
 })
