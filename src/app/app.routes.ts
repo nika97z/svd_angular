@@ -4,12 +4,14 @@ import { Ss } from './ss/ss';
 import { Webdev } from './webdev/webdev';
 import { Automatization } from './automatization/automatization';
 import { Chb } from './chb/chb';
+import { Contact } from './contact/contact';
 
 export const routes: Routes = [
     { path: '', component: Main },
     { path: 'ss', component: Ss },
     { path: 'web-development', component: Webdev},
     { path: 'ai-automatization', component: Automatization},
-    { path: 'chatbot', component: Chb}
+    { path: 'chatbot', component: Chb},
+    { path: 'contact', component: Contact}
 ];
 
