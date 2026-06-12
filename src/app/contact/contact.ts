@@ -30,4 +30,13 @@ export class Contact {
   isServiceExpanded(index: number): boolean {
     return this.expandedServices()[index] || false;
   }
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const values = Object.fromEntries(new FormData(form).entries());
+    console.log('Contact form submitted:', values);
+    // TODO: inject HttpClient to POST values to your server
+    form.reset();
+  }
 }
