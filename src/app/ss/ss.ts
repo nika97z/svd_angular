@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Atom } from '../atom/atom';
 
 @Component({
   selector: 'app-ss',
-  imports: [],
+  imports: [Atom],
   templateUrl: './ss.html',
   styleUrl: './ss.scss',
 })

@@ -120,3 +120,93 @@
         }
     }
 }
+
+@media screen and (max-width: 1164px){
+    .maincont{
+        height: auto;
+        .main{
+            padding-top: 30px;
+            width: 90%;
+            height: auto;
+            flex-direction: column;
+            padding-left: 0;
+            gap: 50px;
+            padding-bottom: 30px;
+            .canvas, .text{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .text{
+                text-align: center;
+                .text0, .text1, .text2 {
+                    transform: translateY(20px);
+                }
+            }
+        }
+        .runing{
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 569px){
+    .maincont{
+        height: auto;
+        .main{
+            padding-top: 30px;
+            width: 90%;
+            height: auto;
+            flex-direction: column;
+            padding-left: 0;
+            gap: 50px;
+            padding-bottom: 30px;
+            .canvas, .text{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .text{
+                text-align: center;
+                .text0, .text1, .text2 {
+                    transform: translateY(20px);
+                }
+            }
+        }
+        .runing{
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 437px){
+    .maincont{
+        height: auto;
+        .main{
+            padding-top: 30px;
+            width: 90%;
+            height: auto;
+            flex-direction: column;
+            padding-left: 0;
+            gap: 50px;
+            padding-bottom: 30px;
+            .canvas, .text{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .text{
+                text-align: center;
+                .text0, .text1, .text2 {
+                    transform: translateY(20px);
+                }
+            }
+        }
+        .runing{
+            width: 90%;
+        }
+    }
+}

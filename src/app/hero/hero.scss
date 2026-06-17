@@ -3,8 +3,12 @@
     display: block;
 }
 .body{
-    height: 195vh;
+    height: auto;
     background-color: #000;
+    .holder{
+        height: 91vh;
+        width: 100%;
+    }
 }
 .vidholder{
     width: 100%;
@@ -126,6 +130,12 @@
 }
 
 @media screen and (max-width: 400px){
+    .body{
+        .holder{
+            height: 50vh;
+            background:none;
+        }
+    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -140,7 +150,6 @@
         padding-right: 20px;
     }
     .vidholder{
-        overflow-x: hidden;
         display: flex;
         justify-content: center;
         .main{
@@ -167,7 +176,7 @@
             gap: 10px;
             .web, .chat, .ai {
                 border-right: none;
-                border-bottom: solid 1px rgb(111, 23, 179);
+                border-bottom: solid 2px rgb(111, 23, 179);
             }
         }
         .circle{
@@ -177,6 +186,12 @@
 }
 
 @media screen and (min-width:401px) and (max-width: 599px){
+    .body{
+        .holder{
+            height: 60vh;
+            background:none;
+        }
+    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -191,7 +206,6 @@
         padding-right: 20px;
     }
     .vidholder{
-        overflow-x: hidden;
         display: flex;
         justify-content: center;
         .main{
@@ -218,7 +232,10 @@
             gap: 10px;
             .web, .chat, .ai {
                 border-right: none;
-                border-bottom: solid 1px rgb(111, 23, 179);
+                border-bottom: solid 2px rgb(111, 23, 179);
+            }
+            .chat{
+                border-bottom: solid 2px rgb(111, 23, 179);
             }
         }
         .circle{
@@ -228,6 +245,12 @@
 }
 
 @media screen and (min-width:600px) and (max-width: 764px){
+    .body{
+        .holder{
+            height: 76vh;
+            background:none;
+        }
+    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -242,7 +265,6 @@
         padding-right: 20px;
     }
     .vidholder{
-        overflow-x: hidden;
         display: flex;
         justify-content: center;
         .main{
@@ -271,8 +293,9 @@
             }
             .web, .chat, .ai {
                 border-right: none;
-                border-bottom: solid 1px rgb(111, 23, 179);
+                border-bottom: solid 2px rgb(111, 23, 179);
             }
+
         }
         .circle{
             display: none;
@@ -281,6 +304,12 @@
 }
 
 @media screen and (min-width:765px) and (max-width: 899px){
+    .body{
+        .holder{
+            height: 80vh;
+            background:none;
+        }
+    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -295,7 +324,6 @@
         padding-right: 20px;
     }
     .vidholder{
-        overflow-x: hidden;
         display: flex;
         justify-content: center;
         .main{
@@ -321,7 +349,7 @@
             height: 1000px;
             .web, .chat, .ai {
                 border-right: none;
-                border-bottom: solid 1px rgb(111, 23, 179);
+                border-bottom: solid 2px rgb(111, 23, 179);
             }
         }
         .circle{
@@ -331,6 +359,12 @@
 }
 
 @media screen and (min-width:900px) and (max-width: 1024px){
+    .body{
+        .holder{
+            height: 80vh;
+            background:none;
+        }
+    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -345,7 +379,6 @@
         padding-right: 20px;
     }
     .vidholder{
-        overflow-x: hidden;
         display: flex;
         justify-content: center;
         .main{
@@ -371,7 +404,7 @@
             height: 1000px;
             .web, .chat, .ai {
                 border-right: none;
-                border-bottom: solid 1px rgb(111, 23, 179);
+                border-bottom: solid 2px rgb(111, 23, 179);
             }
         }
         .circle{
@@ -381,6 +414,12 @@
 }
 
 @media screen and (min-width:1025px) and (max-width: 1134px){
+    .body{
+        .holder{
+            height: 55vh;
+            background:none;
+        }
+    }
     .vidholder{
         .video{
             width: 1500px;
@@ -394,6 +433,12 @@
 }
 
 @media screen and (min-width:1135px) and (max-width: 1200px){
+    .body{
+        .holder{
+            height: 55vh;
+            background:none;
+        }
+    }
     .vidholder{
         .video{
             width: 1500px;
@@ -407,6 +452,12 @@
 }
 
 @media screen and (min-width:1201px) and (max-width: 1300px){
+    .body{
+        .holder{
+            height: 55vh;
+            background:none;
+        }
+    }
     .vidholder{
         .video{
             width: 1500px;
@@ -420,6 +471,12 @@
 }
 
 @media screen and (min-width:1301px) and (max-width: 1400px){
+    .body{
+        .holder{
+            height: 55vh;
+            background:none;
+        }
+    }
     .vidholder{
         .video{
             width: 1500px;
@@ -434,6 +491,12 @@
 }
 
 @media screen and (min-width:1401px) and (max-width: 1500px){
+    .body{
+        .holder{
+            height: 55vh;
+            background:none;
+        }
+    }
     .vidholder{
         .video{
             width: 1500px;
@@ -457,7 +520,6 @@
             width: 65%;
             left: 11%;
         }
-
     }
 }
 
