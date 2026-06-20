@@ -24,6 +24,8 @@ export class Atom implements AfterViewInit, OnDestroy {
   private previousMousePosition = { x: 0, y: 0 };
   private rotation = { x: 0, y: 0 };
   private scene!: THREE.Scene;
+  private camera!: THREE.PerspectiveCamera;
+  private resizeObserver!: ResizeObserver;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -46,7 +48,8 @@ export class Atom implements AfterViewInit, OnDestroy {
     this.scene = new THREE.Scene();
 
     // Create a perspective camera: 60° field of view, aspect ratio w/h, near=0.1, far=100
-    const camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 100);
+    this.camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 100);
+    const camera = this.camera;
 
     // Move the camera back and slightly up so we look down at the scene
     camera.position.set(0, 3, 8);
@@ -63,7 +66,16 @@ export class Atom implements AfterViewInit, OnDestroy {
     // Use the screen's pixel ratio for sharp rendering on retina/HiDPI displays
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
-    
+    this.resizeObserver = new ResizeObserver(() => {
+      const newW = canvas.clientWidth;
+      const newH = canvas.clientHeight;
+      this.camera.aspect = newW / newH;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(newW, newH, false);
+    });
+    this.resizeObserver.observe(canvas);
+
+
 
     // Create a blue point light (like a light bulb) with intensity 2 and range 20
     const pt = new THREE.PointLight(0x6699ff, 2, 20);
@@ -84,7 +96,7 @@ export class Atom implements AfterViewInit, OnDestroy {
     this.scene.add(pt2);
 
     // Create the geometry for the core sphere — radius 1, with 64 segments for smoothness
-    const coreGeo = new THREE.SphereGeometry(0.35, 64, 64);
+    const coreGeo = new THREE.SphereGeometry(0.25, 64, 64);
 
     // Create a physically-based material: blue color, slightly shiny and metallic
     const coreMat = new THREE.MeshStandardMaterial({ color: 0x4477ff, roughness: 0.2, metalness: 0.6 });
@@ -262,6 +274,8 @@ export class Atom implements AfterViewInit, OnDestroy {
 
     // Stop the animation loop to prevent it running in the background
     cancelAnimationFrame(this.animId);
+
+    this.resizeObserver?.disconnect();
 
     // Free GPU memory used by the renderer — important to avoid memory leaks
     this.renderer?.dispose();

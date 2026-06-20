@@ -113,6 +113,10 @@
             flex-direction: column;
             justify-content: space-between;
             padding-bottom: 10%;
+
+            @media (max-width: 1200px) { padding-left: 150px; }
+            @media (max-width: 900px)  { padding-left: 80px; }
+            @media (max-width: 600px)  { padding-left: 30px; }
             .main1{
                 width: auto;
                 height: auto;
@@ -168,6 +172,10 @@
     padding-right: 230px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 1200px) { padding-left: 150px; padding-right: 150px; }
+    @media (max-width: 900px)  { padding-left: 80px; padding-right: 80px; }
+    @media (max-width: 600px)  { padding-left: 30px; padding-right: 30px; grid-template-columns: 1fr; height: auto; }
     position: relative;
     background-color: #f5f5f5;
     z-index: 10;
