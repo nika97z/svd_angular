@@ -37,6 +37,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        touch-action: pan-y;
         .circle {
             position: absolute;
             z-index: 455;
@@ -55,10 +56,12 @@
             flex-direction: column;
             justify-content: flex-end;
             padding: 20px;
+            touch-action: pan-y;
             .card-link {
                 position: absolute;
                 inset: 0;
                 z-index: 5;
+                touch-action: pan-y;
             }
             .explore{
                 display: flex;
@@ -225,7 +228,7 @@
             position: absolute;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr;
-            top: 350px;
+            top: 340px;
             left: 5%;
             width: 90vw;
             height: 1000px;
@@ -267,6 +270,7 @@
     .vidholder{
         display: flex;
         justify-content: center;
+        height: 1470px;
         .main{
             display: none;
         }
@@ -326,6 +330,7 @@
     .vidholder{
         display: flex;
         justify-content: center;
+        height: 1470px;
         .main{
             display: none;
         }
@@ -381,6 +386,7 @@
     .vidholder{
         display: flex;
         justify-content: center;
+        height: 1470px;
         .main{
             display: none;
         }
