@@ -48,4 +48,13 @@ export class Webdev {
   isServiceExpanded(index: number): boolean {
     return this.expandedServices()[index] || false;
   }
+
+  onLinkMouseMove(event: MouseEvent) {
+    const target = event.currentTarget as HTMLElement;
+    const rect = target.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    target.style.setProperty('--x', `${x}%`);
+    target.style.setProperty('--y', `${y}%`);
+  }
 }

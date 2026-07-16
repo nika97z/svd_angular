@@ -6,15 +6,21 @@
                 <source src="/Hero.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="serv">
+        <div class="overlay">
+            <p class="overlay-text1">Everything App for your teams</p>
+            <p class="overlay-text2">We help you to build your business</p>
+            <a routerLink="/contact" class="overlay-link" (mouseenter)="onLinkMouseMove($event)" (mousemove)="onLinkMouseMove($event)">CONTACT US</a>
+        </div>
+    </div>
+    <div class="serv">
             <svg xmlns="http://www.w3.org/2000/svg" class="circle" viewBox="0 0 16 16" fill="black">
                 <circle cx="8" cy="8" r="7" stroke="rgb(61, 57, 57)" stroke-width="0.2"/>
                 <circle cx="8" cy="8" r="2.33" stroke="rgb(61, 57, 57)" stroke-width="0.17"/>
             </svg>
             <div class="web ser">
-                <a href="YOUR_URL_HERE" class="card-link" title="Web Development"></a>
+                <a routerLink="/web-development" class="card-link" title="Web Development"></a>
                 <div class="wraper_1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="756" height="468" viewBox="0 0 756 468" fill="black" preserveAspectRatio="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="756" height="468" viewBox="0 0 756 468" fill="black" preserveAspectRatio="xMidYMid slice">
                         <g clip-path="url(#clip0_4076_12138)">
                         <mask id="mask0_4076_12138" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="756" height="468">
                         <path d="M756 0H0V468H756V0Z" fill="white"/>
@@ -497,9 +503,9 @@
                 </a>
             </div>
             <div class="chat ser">
-                <a href="YOUR_URL_HERE" class="card-link" title="Web Development"></a>
+                <a routerLink="chatbot" class="card-link" title="Web Development"></a>
                 <div class="wraper_1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="756" height="468" viewBox="0 0 756 468" fill="black" preserveAspectRatio="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="756" height="468" viewBox="0 0 756 468" fill="black" preserveAspectRatio="xMidYMid slice">
                         <g clip-path="url(#clip0_4076_12138)">
                         <mask id="mask0_4076_12138" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="756" height="468">
                         <path d="M756 0H0V468H756V0Z" fill="white"/>
@@ -982,10 +988,10 @@
                 </a>
             </div>
             <div class="ai ser">
-                <a href="YOUR_URL_HERE" class="card-link" title="Web Development"></a>
+                <a routerLink="ai-automatization" class="card-link" title="Web Development"></a>
                 <div class="wraper_1">
                     <div class="wraper_1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="756" height="468" viewBox="0 0 756 468" fill="black" preserveAspectRatio="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="756" height="468" viewBox="0 0 756 468" fill="black" preserveAspectRatio="xMidYMid slice">
                         <g clip-path="url(#clip0_4076_12138)">
                         <mask id="mask0_4076_12138" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="756" height="468">
                         <path d="M756 0H0V468H756V0Z" fill="white"/>
@@ -1469,9 +1475,9 @@
                 </a>
             </div>
             <div class="ui ser">
-                <a href="YOUR_URL_HERE" class="card-link" title="Web Development"></a>
+                <a routerLink="ui/ux_design" class="card-link" title="Web Development"></a>
                 <div class="wraper_1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="756" height="468" viewBox="0 0 756 468" fill="black" preserveAspectRatio="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="756" height="468" viewBox="0 0 756 468" fill="black" preserveAspectRatio="xMidYMid slice">
                         <g clip-path="url(#clip0_4076_12138)">
                         <mask id="mask0_4076_12138" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="756" height="468">
                         <path d="M756 0H0V468H756V0Z" fill="white"/>
@@ -1954,6 +1960,4 @@
                 </a>
             </div>
         </div>
-    </div>
-    <div class="holder"></div>
 </div>

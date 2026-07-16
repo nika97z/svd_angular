@@ -5,17 +5,72 @@
 .body{
     height: auto;
     background-color: #000;
-    .holder{
-        height: 91vh;
-        width: 100%;
-    }
 }
+
 .vidholder{
     width: 100%;
     height: 100vh;
     position: relative;
     background-color: #000;
-
+    .overlay{
+        position: relative;
+        top: 30%;
+        left: 10%;
+        z-index: 999;
+        width: 40%;
+        height: auto;
+        color: white;
+        .overlay-text1{
+            font-size: 5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .overlay-text2{
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .overlay-link{
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(180deg, #fdf6ec 0%, #f2e2cd 100%);
+            color: #7a4326;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            border-radius: 50px;
+            isolation: isolate;
+            transition: transform 0.3s ease;
+            --x: 50%;
+            --y: 50%;
+        }
+        .overlay-link::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            border-radius: inherit;
+            background: radial-gradient(circle 100px at var(--x) var(--y), rgba(255, 255, 247, 0.9) 0%, rgba(255, 255, 255, 0.733) 55%, transparent 80%);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .overlay-link::after{
+            content: "\2192";
+            font-size: 1rem;
+        }
+        .overlay-link:hover{
+            transform: scale(1.04);
+        }
+        .overlay-link:hover::before{
+            opacity: 1;
+        }
+    }
     .video{
         width: 120%;
         position: absolute;
@@ -27,17 +82,18 @@
             display: block;
         }
     }
-    .serv{
-        position: absolute;
-        top:100vh;
-        left: 10%;
+}
+.serv{
+        position: relative;
+        margin-left: 10%;
         width: 67%;
-        height: 80%;
+        height: 80vh;
         z-index: 4;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         touch-action: pan-y;
+        background-color: #000;
         .circle {
             position: absolute;
             z-index: 455;
@@ -128,17 +184,14 @@
         }
         .ai{
             border-right: solid 1px rgb(61, 57, 57);
+            overflow: hidden;
         }
-    }
+        .ui{
+            overflow: hidden;
+        }
 }
 
 @media screen and (max-width: 400px){
-    .body{
-        .holder{
-            height: 50vh;
-            background:none;
-        }
-    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -168,33 +221,26 @@
             left: 25%;
             transform: translate(-25%);
         }
-        .serv{
-            position: absolute;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            top: 230px;
-            left: 5%;
-            width: 90%;
-            height: 1000px;
-            gap: 10px;
-            .web, .chat, .ai {
-                border-right: none;
-                border-bottom: solid 2px rgb(111, 23, 179);
-            }
-        }
+    }
+    .serv{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-top: calc(230px - 100vh);
+        margin-left: 5%;
+        width: 90%;
+        height: 1000px;
+        gap: 10px;
         .circle{
             display: none;
+        }
+        .web, .chat, .ai {
+            border-right: none;
+            border-bottom: solid 2px rgb(111, 23, 179);
         }
     }
 }
 
 @media screen and (min-width:401px) and (max-width: 599px){
-    .body{
-        .holder{
-            height: 60vh;
-            background:none;
-        }
-    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -224,36 +270,29 @@
             left: 25%;
             transform: translate(-25%);
         }
-        .serv{
-            position: absolute;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            top: 340px;
-            left: 5%;
-            width: 90vw;
-            height: 1000px;
-            gap: 10px;
-            .web, .chat, .ai {
-                border-right: none;
-                border-bottom: solid 2px rgb(111, 23, 179);
-            }
-            .chat{
-                border-bottom: solid 2px rgb(111, 23, 179);
-            }
-        }
+    }
+    .serv{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-top: calc(342px - 100vh);
+        margin-left: 5%;
+        width: 90vw;
+        height: 1000px;
+        gap: 10px;
         .circle{
             display: none;
+        }
+        .web, .chat, .ai {
+            border-right: none;
+            border-bottom: solid 2px rgb(111, 23, 179);
+        }
+        .chat{
+            border-bottom: solid 2px rgb(111, 23, 179);
         }
     }
 }
 
 @media screen and (min-width:600px) and (max-width: 764px){
-    .body{
-        .holder{
-            height: 76vh;
-            background:none;
-        }
-    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -284,36 +323,28 @@
             left: 45%;
             transform: translate(-45%);
         }
-        .serv{
-            position: absolute;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            top: 420px;
-            left: 5%;
-            width: clamp(530px, 80%, 590px);
-            height: 1000px;
-            .chat{
-                border-radius: 15px;
-            }
-            .web, .chat, .ai {
-                border-right: none;
-                border-bottom: solid 2px rgb(111, 23, 179);
-            }
-
-        }
+    }
+    .serv{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-top: -1050px;
+        margin-left: 5%;
+        width: clamp(530px, 80%, 590px);
+        height: 1000px;
         .circle{
             display: none;
+        }
+        .chat{
+            border-radius: 15px;
+        }
+        .web, .chat, .ai {
+            border-right: none;
+            border-bottom: solid 2px rgb(111, 23, 179);
         }
     }
 }
 
 @media screen and (min-width:765px) and (max-width: 899px){
-    .body{
-        .holder{
-            height: 80vh;
-            background:none;
-        }
-    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -344,32 +375,25 @@
             left: 45%;
             transform: translate(-45%);
         }
-        .serv{
-            position: absolute;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            top: 420px;
-            left: 5%;
-            width: 73%;
-            height: 1000px;
-            .web, .chat, .ai {
-                border-right: none;
-                border-bottom: solid 2px rgb(111, 23, 179);
-            }
-        }
+    }
+    .serv{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-top: -1050px;
+        margin-left: 5%;
+        width: 73%;
+        height: 1000px;
         .circle{
             display: none;
+        }
+        .web, .chat, .ai {
+            border-right: none;
+            border-bottom: solid 2px rgb(111, 23, 179);
         }
     }
 }
 
 @media screen and (min-width:900px) and (max-width: 1024px){
-    .body{
-        .holder{
-            height: 80vh;
-            background:none;
-        }
-    }
     .headholder{
         height: 80px;
         width: 100%;
@@ -400,119 +424,86 @@
             left: 45%;
             transform: translate(-45%);
         }
-        .serv{
-            position: absolute;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            top: 420px;
-            left: 5%;
-            width: 69%;
-            height: 1000px;
-            .web, .chat, .ai {
-                border-right: none;
-                border-bottom: solid 2px rgb(111, 23, 179);
-            }
-        }
+    }
+    .serv{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-top: -1050px;
+        margin-left: 5%;
+        width: 69%;
+        height: 1000px;
         .circle{
             display: none;
+        }
+        .web, .chat, .ai {
+            border-right: none;
+            border-bottom: solid 2px rgb(111, 23, 179);
         }
     }
 }
 
 @media screen and (min-width:1025px) and (max-width: 1134px){
-    .body{
-        .holder{
-            height: 55vh;
-            background:none;
-        }
-    }
     .vidholder{
         .video{
             width: 1500px;
         }
-        .serv{
-            top: 570px;
-            width: 75%;
-            left: 5%;
-        }
+    }
+    .serv{
+        margin-top: calc(570px - 100vh);
+        width: 73%;
+        margin-left: 5%;
     }
 }
 
 @media screen and (min-width:1135px) and (max-width: 1200px){
-    .body{
-        .holder{
-            height: 55vh;
-            background:none;
-        }
-    }
     .vidholder{
         .video{
             width: 1500px;
         }
-        .serv{
-            top: 570px;
-            width: 72%;
-            left: 5%;
-        }
+    }
+    .serv{
+        margin-top: calc(570px - 100vh);
+        width: 72%;
+        margin-left: 5%;
     }
 }
 
 @media screen and (min-width:1201px) and (max-width: 1300px){
-    .body{
-        .holder{
-            height: 55vh;
-            background:none;
-        }
-    }
     .vidholder{
         .video{
             width: 1500px;
         }
-        .serv{
-            top: 570px;
-            width: 70%;
-            left: 5%;
-        }
+    }
+    .serv{
+        margin-top: calc(570px - 100vh);
+        width: 70%;
+        margin-left: 5%;
     }
 }
 
 @media screen and (min-width:1301px) and (max-width: 1400px){
-    .body{
-        .holder{
-            height: 55vh;
-            background:none;
-        }
-    }
     .vidholder{
         .video{
             width: 1500px;
         }
-        .serv{
-            top: 570px;
-            width: 68%;
-            left: 5%;
-        }
-
+    }
+    .serv{
+        margin-top: calc(570px - 100vh);
+        width: 68%;
+        margin-left: 5%;
     }
 }
 
 @media screen and (min-width:1401px) and (max-width: 1500px){
-    .body{
-        .holder{
-            height: 55vh;
-            background:none;
-        }
-    }
     .vidholder{
         .video{
             width: 1500px;
         }
-        .serv{
-            top: 570px;
-            width: 66%;
-            left: 5%;
-        }
-
+    }
+    .serv{
+        margin-top: calc(570px - 100vh);
+        width: 66%;
+        margin-left: 5%;
     }
 }
 
@@ -521,11 +512,11 @@
         .video{
             width:1900px;
         }
-        .serv{
-            top: 735px;
-            width: 65%;
-            left: 11%;
-        }
+    }
+    .serv{
+        margin-top: calc(735px - 100vh);
+        width: 65%;
+        margin-left: 11%;
     }
 }
 
@@ -534,12 +525,11 @@
         .video{
             width: 2000px;
         }
-        .serv{
-            top: 760px;
-            width: 70%;
-            left: 5%;
-        }
-
+    }
+    .serv{
+        margin-top: calc(760px - 100vh);
+        width: 70%;
+        margin-left: 5%;
     }
 }
 
@@ -548,12 +538,11 @@
         .video{
             width: 2200px;
         }
-        .serv{
-            top: 835px;
-            width: 75.5%;
-            left: 5%;
-        }
-
+    }
+    .serv{
+        margin-top: calc(835px - 100vh);
+        width: 75.5%;
+        margin-left: 5%;
     }
 }
 
@@ -562,12 +551,11 @@
         .video{
             width: 2200px;
         }
-        .serv{
-            top: 835px;
-            width: 70%;
-            left: 5%;
-        }
-
+    }
+    .serv{
+        margin-top: calc(835px - 100vh);
+        width: 70%;
+        margin-left: 5%;
     }
 }
 
@@ -577,10 +565,9 @@
         .video{
             width: 130%;
         }
-        .serv{
-            top: 100%;
-            width: 68%;
-            left: 9.5%;
-        }
+    }
+    .serv{
+        width: 68%;
+        margin-left: 9.5%;
     }
 }
