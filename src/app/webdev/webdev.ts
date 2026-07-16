@@ -20,8 +20,18 @@ export class Webdev {
   approachSubtitle = input('Approach');
   approachSubtitle2 = input('and ');
   approachSubtitle3 = input('Work Specifics');
-  approachDescription = input('At SVD Pixel, our approach to web development is centered around collaboration, innovation, and delivering exceptional results. We believe that every business is unique, and therefore, we take the time to understand our clients\'s specific needs and goals before embarking on any project. Our team of experienced developers works closely with clients to create custom solutions that are tailored to their brand identity and target audience.');
-  
+  approachDescription = input('At SVD Pixel, our approach to web development is built on collaboration, innovation, and delivering results that matter. Every business is different, so we take the time to understand your goals and audience before writing a single line of code. Our developers work closely with you to build custom, high-performing websites tailored to your brand.');
+
+  serv1Title = input('Custom Web Development');
+  serv1Desc = input('We build websites from scratch, tailored to your brand, your goals, and the way your customers actually browse. No bloated templates, no unnecessary plugins — just clean, fast code built to last.');
+  serv2Title = input('Shopify & E-Commerce');
+  serv2Desc = input('From product pages to checkout, we build online stores that are easy to manage and even easier to buy from, so every visit has a real chance of becoming a sale.');
+  serv3Title = input('Mobile-First, Responsive Design');
+  serv3Desc = input('Every site we build looks and works great on any screen size, because most of your visitors are on their phones before they ever touch a desktop.');
+  serv4Title = input('SEO & Performance Optimization');
+  serv4Desc = input('We optimize every page for speed and search from day one, so your site loads fast, ranks well, and doesn\'t lose visitors before they even see it.');
+  serv5Title = input('Ongoing Support & Maintenance');
+  serv5Desc = input('Launch day isn\'t the finish line. We stay on to handle updates, fixes, and improvements, so your site keeps running smoothly long after it goes live.');
 
 
 

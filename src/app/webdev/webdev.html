@@ -30,9 +30,10 @@
                 <div class="nav-links" [style.height]="isMenuOpen() ? '100vh' : '0px'">
                     <ul>
                         <li><a routerLink="/">Home</a></li>
-                        <li><a routerLink="/ai-chatbot">AI Chatbot</a></li>
-                        <li><a routerLink="/ai-automation">AI Automatization</a></li>
-                        <li><a routerLink="/book-a-table">BOOK A TABLE</a></li>
+                        <li><a routerLink="/web-development">Web Development</a></li>
+                        <li><a routerLink="/chatbot">AI Chatbot</a></li>
+                        <li><a routerLink="/ai-automatization">AI Automatization</a></li>
+                        <li><a routerLink="/ui/ux_design">UI/UX Design</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,7 +81,7 @@
     <div class="detals2">
         <div class="serv1">
             <div class="serv1_1">
-                <p>Custom Web Development</p>
+                <p>{{ serv1Title() }}</p>
                 <div class="linemain" (click)="toggleService(0)">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="30px" height="30px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" [class.active]="isServiceExpanded(0)">
                     <line fill="none" stroke="#F45389" stroke-linecap="round" stroke-linejoin="round" x1="25" y1="10.5" x2="25" y2="39.5"/>
@@ -89,11 +90,11 @@
                     </svg>
                 </div>
             </div>
-            <p class="serv1_2" [class.show]="isServiceExpanded(0)">We specialize in creating custom websites that are tailored to the unique needs and goals of our clients. Our team of experienced developers works closely with clients to understand their brand identity and target audience, ensuring that every website we create is visually stunning, highly functional, and user-friendly. We utilize the latest technologies and industry best practices to deliver exceptional results that drive business growth and success.</p>
+            <p class="serv1_2" [class.show]="isServiceExpanded(0)">{{ serv1Desc() }}</p>
         </div>
         <div class="serv1">
             <div class="serv1_1">
-                <p>Mobile Friendly Design</p>
+                <p>{{ serv2Title() }}</p>
                 <div class="linemain" (click)="toggleService(1)">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="30px" height="30px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" [class.active]="isServiceExpanded(1)">
                     <line fill="none" stroke="#F45389" stroke-linecap="round" stroke-linejoin="round" x1="25" y1="10.5" x2="25" y2="39.5"/>
@@ -102,11 +103,11 @@
                     </svg>
                 </div>
             </div>
-            <p class="serv1_2" [class.show]="isServiceExpanded(1)">We specialize in creating mobile-friendly websites that are optimized for all devices. Our team of experienced developers works closely with clients to understand their brand identity and target audience, ensuring that every website we create is visually stunning, highly functional, and user-friendly. We utilize the latest technologies and industry best practices to deliver exceptional results that drive business growth and success.</p>
+            <p class="serv1_2" [class.show]="isServiceExpanded(1)">{{ serv2Desc() }}</p>
         </div>
         <div class="serv1">
             <div class="serv1_1">
-                <p>Mobile Friendly Design</p>
+                <p>{{ serv3Title() }}</p>
                 <div class="linemain" (click)="toggleService(2)">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="30px" height="30px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" [class.active]="isServiceExpanded(2)">
                     <line fill="none" stroke="#F45389" stroke-linecap="round" stroke-linejoin="round" x1="25" y1="10.5" x2="25" y2="39.5"/>
@@ -115,33 +116,33 @@
                     </svg>
                 </div>
             </div>
-            <p class="serv1_2" [class.show]="isServiceExpanded(2)">We specialize in creating mobile-friendly websites that are optimized for all devices. Our team of experienced developers works closely with clients to understand their brand identity and target audience, ensuring that every website we create is visually stunning, highly functional, and user-friendly. We utilize the latest technologies and industry best practices to deliver exceptional results that drive business growth and success.</p>
+            <p class="serv1_2" [class.show]="isServiceExpanded(2)">{{ serv3Desc() }}</p>
         </div>
         <div class="serv1">
             <div class="serv1_1">
-                <p>Mobile Friendly Design</p>
+                <p>{{ serv4Title() }}</p>
                 <div class="linemain" (click)="toggleService(3)">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="30px" height="30px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" [class.active]="isServiceExpanded(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="30px" height="30px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" [class.active]="isServiceExpanded(3)">
                     <line fill="none" stroke="#F45389" stroke-linecap="round" stroke-linejoin="round" x1="25" y1="10.5" x2="25" y2="39.5"/>
                     <circle fill="none" stroke="#000000" cx="25" cy="25" r="23.667"/>
                     <line fill="none" stroke="#F45389" stroke-linecap="round" stroke-linejoin="round" x1="39.5" y1="25" x2="10.5" y2="25"/>
                     </svg>
                 </div>
             </div>
-            <p class="serv1_2" [class.show]="isServiceExpanded(3)">We specialize in creating mobile-friendly websites that are optimized for all devices. Our team of experienced developers works closely with clients to understand their brand identity and target audience, ensuring that every website we create is visually stunning, highly functional, and user-friendly. We utilize the latest technologies and industry best practices to deliver exceptional results that drive business growth and success.</p>
+            <p class="serv1_2" [class.show]="isServiceExpanded(3)">{{ serv4Desc() }}</p>
         </div>
         <div class="serv1">
             <div class="serv1_1">
-                <p>Mobile Friendly Design</p>
+                <p>{{ serv5Title() }}</p>
                 <div class="linemain" (click)="toggleService(4)">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="30px" height="30px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" [class.active]="isServiceExpanded(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" width="30px" height="30px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve" [class.active]="isServiceExpanded(4)">
                     <line fill="none" stroke="#F45389" stroke-linecap="round" stroke-linejoin="round" x1="25" y1="10.5" x2="25" y2="39.5"/>
                     <circle fill="none" stroke="#000000" cx="25" cy="25" r="23.667"/>
                     <line fill="none" stroke="#F45389" stroke-linecap="round" stroke-linejoin="round" x1="39.5" y1="25" x2="10.5" y2="25"/>
                     </svg>
                 </div>
             </div>
-            <p class="serv1_2" [class.show]="isServiceExpanded(4)">We specialize in creating mobile-friendly websites that are optimized for all devices. Our team of experienced developers works closely with clients to understand their brand identity and target audience, ensuring that every website we create is visually stunning, highly functional, and user-friendly. We utilize the latest technologies and industry best practices to deliver exceptional results that drive business growth and success.</p>
+            <p class="serv1_2" [class.show]="isServiceExpanded(4)">{{ serv5Desc() }}</p>
         </div>
     </div>
 </div>
