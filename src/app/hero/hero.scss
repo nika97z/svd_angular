@@ -14,7 +14,7 @@
     background-color: #000;
     .overlay{
         position: relative;
-        top: 30%;
+        top: 25%;
         left: 10%;
         z-index: 999;
         width: 40%;
@@ -473,6 +473,14 @@
         .video{
             width: 1500px;
         }
+        .overlay{
+            .overlay-text1{
+                font-size: 4rem;
+            }
+            .overlay-link{
+                padding: 12px 30px;
+            }
+        }
     }
     .serv{
         margin-top: calc(570px - 100vh);
@@ -485,6 +493,14 @@
     .vidholder{
         .video{
             width: 1500px;
+        }
+        .overlay{
+            .overlay-text1{
+                font-size: 4rem;
+            }
+            .overlay-link{
+                padding: 12px 30px;
+            }
         }
     }
     .serv{

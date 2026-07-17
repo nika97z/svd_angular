@@ -15,20 +15,6 @@
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    .header1{
-        display: flex;
-        width: 40%;
-        justify-content: space-between;
-        .services{
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            a{
-                text-decoration: none;
-                color: white;
-            }
-        }
-    }
 }
 
 .headholder{
