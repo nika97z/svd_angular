@@ -1,89 +1,122 @@
-.ticker-wrap {
-    width: 100%;
+.filler{
+    height: 100px;
+    background-color: black;
+}
+
+.wrap{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  .ticker-wrap {
+    width: 90%;
     height: auto;
     overflow: hidden;
-    border-top: 2px solid #7e47ff !important; 
-    border-bottom: 2px solid #7e47ff;
+    border-style: solid;
+    border-width: 2px 0;
+    border-image: linear-gradient(to right, transparent, #7e47ff 15%, #7e47ff 85%, transparent) 1;
     padding: 16px 0;
     background-color: black;
     transform: translateZ(0);
     z-index: 999;
     position: relative;
   }
- 
-  .ticker {
-    display: flex;
-    width: max-content;
-    will-change: transform;
-    backface-visibility: hidden;
-  }
+}
 
+.ticker-wrap::before,
+.ticker-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  max-width: 15%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ticker-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, black, transparent);
+}
+
+.ticker-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, black, transparent);
+}
+
+.ticker {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.ticker-wrap .ticker-item {
+  white-space: nowrap;
+  font-size: 50px;
+  font-weight: bolder;
+  letter-spacing: 0.08em;
+  color: aliceblue;
+  font-family: Verdana, sans-serif;
+  padding: 0 3rem;
+}
+.ticker-wrap .ticker-item {
+  white-space: nowrap;
+  font-size: 50px;
+  font-weight: bolder;
+  letter-spacing: 0.08em;
+  color: aliceblue;
+  font-family: Verdana, sans-serif;
+  padding: 0 3rem;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+}
+
+/* Responsive media queries */
+@media (max-width: 480px) {
+  .ticker-wrap {
+    padding: 8px 0;
+  }
   .ticker-wrap .ticker-item {
-    white-space: nowrap;
+    font-size: 16px;
+    padding: 0 0.75rem;
+    letter-spacing: 0.03em;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .ticker-wrap {
+    padding: 10px 0;
+  }
+  .ticker-wrap .ticker-item {
+    font-size: 22px;
+    padding: 0 1rem;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .ticker-wrap {
+    padding: 12px 0;
+  }
+  .ticker-wrap .ticker-item {
+    font-size: 34px;
+    padding: 0 1.5rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .ticker-wrap .ticker-item {
     font-size: 50px;
-    font-weight: bolder;
-    letter-spacing: 0.08em;
-    color: aliceblue;
-    font-family: Verdana, sans-serif;
     padding: 0 3rem;
   }
+}
+
+@media (min-width: 1440px) {
   .ticker-wrap .ticker-item {
-    white-space: nowrap;
-    font-size: 50px;
-    font-weight: bolder;
-    letter-spacing: 0.08em;
-    color: aliceblue;
-    font-family: Verdana, sans-serif;
-    padding: 0 3rem;
-    text-shadow: none;
-    -webkit-text-stroke: 0;
+    font-size: 60px;
+    padding: 0 4rem;
   }
-
-  /* Responsive media queries */
-  @media (max-width: 480px) {
-    .ticker-wrap {
-      padding: 8px 0;
-    }
-    .ticker-wrap .ticker-item {
-      font-size: 16px;
-      padding: 0 0.75rem;
-      letter-spacing: 0.03em;
-    }
-  }
-
-  @media (min-width: 481px) and (max-width: 767px) {
-    .ticker-wrap {
-      padding: 10px 0;
-    }
-    .ticker-wrap .ticker-item {
-      font-size: 22px;
-      padding: 0 1rem;
-      letter-spacing: 0.04em;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .ticker-wrap {
-      padding: 12px 0;
-    }
-    .ticker-wrap .ticker-item {
-      font-size: 34px;
-      padding: 0 1.5rem;
-      letter-spacing: 0.06em;
-    }
-  }
-
-  @media (min-width: 1025px) and (max-width: 1439px) {
-    .ticker-wrap .ticker-item {
-      font-size: 50px;
-      padding: 0 3rem;
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .ticker-wrap .ticker-item {
-      font-size: 60px;
-      padding: 0 4rem;
-    }
-  }
+}
 
