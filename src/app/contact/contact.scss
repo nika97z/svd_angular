@@ -63,13 +63,13 @@
                 &.active {
                     ul {
                         li.line1 {
-                            transform: translateY(19px) rotate(45deg);
+                            transform: translateY(18px) rotate(45deg);
                         }
                         li.line2 {
                             opacity: 0;
                         }
                         li.line3 {
-                            transform: translateY(-19px) rotate(-45deg);
+                            transform: translateY(-18px) rotate(-45deg);
                         }
                     }
                 }
