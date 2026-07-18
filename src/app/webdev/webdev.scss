@@ -176,6 +176,7 @@
     .detals1{
         display: flex;
         flex-direction: column;
+        height: 100%;
         gap: 50px;
         .detals1_1{
             display: flex;
@@ -243,6 +244,7 @@
         flex-direction: column;
         z-index: 5;
         width: 100%;
+        height: 100%;
         .serv1{
             width: 100%;
             height: auto;
@@ -305,6 +307,30 @@
                 }
             }
         }
+    }
+}
+
+
+@media  screen and (max-width: 1500px){
+    .detals{
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+}
+
+@media  screen and (max-width: 1200px){
+    .detals{
+        height: 55vh;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media  screen and (max-width: 964px){
+    .detals{
+        height: auto;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
     }
 }
 

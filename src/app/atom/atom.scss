@@ -10,8 +10,12 @@
 
   @media (max-width: 768px) {
     left: 40%;
-    top: -10%;
-    width: 60vw;
-    height: 60vh;
+    top: -3%;
+    width: 40vw;
+    height: 40vh;
+  }
+
+  @media (max-width: 500px) {
+    display: none;
   }
 }
