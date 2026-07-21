@@ -7,3 +7,15 @@
 html, body {
     overflow-x: clip;
 }
+
+#chatbot-iframe {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 155px;
+    border: none;
+    z-index: 99999;
+    background: transparent;
+    transition: width 0.2s ease, height 0.2s ease;
+}

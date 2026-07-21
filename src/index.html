@@ -9,5 +9,26 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <iframe
+    id="chatbot-iframe"
+    title="Chatbot"
+    src="https://chatbot.svdpixel.com"
+    frameborder="0">
+  </iframe>
+
+  <script>
+    window.addEventListener('message', function (e) {
+      var iframe = document.getElementById('chatbot-iframe');
+      if (e.data === 'chat-open') {
+        iframe.style.width = '420px';
+        iframe.style.height = '620px';
+      }
+      if (e.data === 'chat-closed') {
+        iframe.style.width = '120px';
+        iframe.style.height = '155px';
+      }
+    });
+  </script>
 </body>
 </html>
