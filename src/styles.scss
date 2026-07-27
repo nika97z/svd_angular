@@ -18,7 +18,7 @@ html, body {
     width: 120px;
     height: 155px;
     border: none;
-    z-index: 99999;
+    z-index: 2147483647;
     background: transparent;
     transition: width 0.2s ease, height 0.2s ease;
 }
