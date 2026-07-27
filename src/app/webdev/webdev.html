@@ -2,7 +2,7 @@
 <div class="mainx">
     <div class="webdev">
         <div class="header">
-            <div class="logo">
+            <a class="logo" routerLink="/">
                 <svg viewBox="0 0 57 92" fill="black" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24.7629 38.8956L28.3032 42.4264L31.834 38.8861L28.2937 35.3553L24.7629 38.8956Z" />
                     <path d="M28.3032 42.4264L31.8434 45.9572L35.3742 42.4169L31.834 38.8861L28.3032 42.4264Z"/>
@@ -18,7 +18,7 @@
                     <path d="M42.4264 28.2653L38.9215 31.7796L42.4358 35.3364L45.9666 31.7961L42.4264 28.2653Z"/>
                 </svg>
                 <p>SVD pixel</p>
-            </div>
+            </a>
             <div class="burgermain">
                 <div class="burger" [class.active]="isMenuOpen()" (click)="toggleMenu()">
                     <ul>

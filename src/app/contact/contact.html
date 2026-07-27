@@ -1,6 +1,6 @@
 <div class="main">
     <div class="header">
-            <div class="logo">
+            <a class="logo" routerLink="/">
                 <svg viewBox="0 0 57 92" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24.7629 38.8956L28.3032 42.4264L31.834 38.8861L28.2937 35.3553L24.7629 38.8956Z" />
                     <path d="M28.3032 42.4264L31.8434 45.9572L35.3742 42.4169L31.834 38.8861L28.3032 42.4264Z"/>
@@ -16,7 +16,7 @@
                     <path d="M42.4264 28.2653L38.9215 31.7796L42.4358 35.3364L45.9666 31.7961L42.4264 28.2653Z"/>
                 </svg>
                 <p>SVD pixel</p>
-            </div>
+            </a>
             <div class="burgermain">
                 <div class="burger" [class.active]="isMenuOpen()" (click)="toggleMenu()">
                     <ul>
@@ -25,7 +25,7 @@
                         <li class="line3"></li>
                     </ul>
                 </div>
-                <div class="nav-links" [style.height]="isMenuOpen() ? '100vh' : '0px'">
+                <div class="nav-links" [class.open]="isMenuOpen()">
                     <ul>
                         <li><a routerLink="/">Home</a></li>
                         <li><a routerLink="/web-development">Web Development</a></li>
@@ -33,6 +33,10 @@
                         <li><a routerLink="/ai-automatization">AI Automatization</a></li>
                         <li><a routerLink="/ui/ux_design">UI/UX Design</a></li>
                     </ul>
+                    <button type="button" class="close-btn" (click)="toggleMenu()" aria-label="Close menu">
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -50,10 +54,10 @@
             </div>
             <div class="con1_2">
                 <div class="socials">
-                    <a href="#" class="social-icon" aria-label="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=61572085522923" class="social-icon" aria-label="Facebook">
                     <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                     </a>
-                    <a href="#" class="social-icon" aria-label="Instagram">
+                    <a href="https://www.instagram.com/svdpixel/" class="social-icon" aria-label="Instagram">
                     <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
                     </a>
                     <a href="#" class="social-icon" aria-label="Twitter">
@@ -72,7 +76,15 @@
                     <input type="text" placeholder="Your name" name="name" />
                     <input type="email" placeholder="you@company.com" name="email" />
                     <textarea placeholder="Tell us a bit about the project." name="message"></textarea>
-                    <button type="submit" class="send-btn">SEND MESSAGE <span class="arrow">→</span></button>
+                    <button type="submit" class="send-btn" [disabled]="submitStatus() === 'sending'">
+                        {{ submitStatus() === 'sending' ? 'SENDING...' : 'SEND MESSAGE' }} <span class="arrow">→</span>
+                    </button>
+                    @if (submitStatus() === 'success') {
+                        <p class="form-status success">Message sent — we'll get back to you soon.</p>
+                    }
+                    @if (submitStatus() === 'error') {
+                        <p class="form-status error">Something went wrong. Please try again.</p>
+                    }
                 </form>
             </div>
         </div>

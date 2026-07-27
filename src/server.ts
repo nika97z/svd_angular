@@ -6,23 +6,46 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import nodemailer from 'nodemailer';
+import 'dotenv/config';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+app.use(express.json());
+
+const mailTransporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env['GMAIL_USER'],
+    pass: process.env['GMAIL_APP_PASSWORD'],
+  },
+});
+
+app.post('/api/contact', async (req, res) => {
+  const { name, email, message } = req.body ?? {};
+
+  if (!name || !email || !message) {
+    res.status(400).json({ error: 'name, email and message are required' });
+    return;
+  }
+
+  try {
+    await mailTransporter.sendMail({
+      from: process.env['GMAIL_USER'],
+      to: process.env['CONTACT_TO_EMAIL'] || process.env['GMAIL_USER'],
+      replyTo: email,
+      subject: `New contact form message from ${name}`,
+      text: `From: ${name} <${email}>\n\n${message}`,
+    });
+    res.status(200).json({ ok: true });
+  } catch (error) {
+    console.error('Failed to send contact email:', error);
+    res.status(500).json({ error: 'Failed to send message' });
+  }
+});
 
 /**
  * Serve static files from /browser

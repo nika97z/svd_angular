@@ -36,12 +36,12 @@
             cursor: pointer;
             height: 100%;
             width: 200px;
-            display: flex;                
+            display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             .burger{
-                width: 40px;    
+                width: 40px;
                 height: 40px;
                 display: block;
                 ul{
@@ -76,11 +76,17 @@
             }
             .nav-links {
                 overflow: hidden;
-                transition: height 0.3s ease;
+                height: 0;
+                transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                 position: fixed;
                 top: 20vh;
                 right: 0;
                 width: 200px;
+                background-color: #000000;
+                z-index: 777;
+                &.open {
+                    height: 250px;
+                }
                 ul {
                     list-style: none;
                     display: flex;
@@ -99,6 +105,9 @@
                         }
                     }
                 }
+                .close-btn {
+                    display: none;
+                }
             }
         }
     }
@@ -108,8 +117,8 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         font-size: 24px;
-        padding-left: 230px;
-        padding-right: 230px;
+        padding-left: 30px;
+        padding-right: 30px;
         padding-bottom: 50px;
         gap: 20px;
         .con1{
@@ -306,6 +315,16 @@
                         &:hover{
                             background-color:rgba(255,255,255,0.06);
                         }
+                        &:disabled{
+                            opacity: 0.6;
+                            cursor: not-allowed;
+                        }
+                    }
+                    .form-status{
+                        font-size: 14px;
+                        margin: 0;
+                        &.success{ color: #7ee787; }
+                        &.error{ color: #ff7b72; }
                     }
                 }
             }
@@ -318,10 +337,8 @@
     .main {
         height: auto;
         .header {
-            height: auto;
             padding: 15px 0;
             .logo {
-                width: 100%;
                 height: auto;
                 padding: 15px;
                 svg {
@@ -333,7 +350,6 @@
                 }
             }
             .burgermain {
-                width: 100%;
                 height: auto;
                 padding: 15px;
                 .burger {
@@ -342,11 +358,58 @@
                 }
                 .nav-links {
                     width: 100%;
-                    top: auto;
-                    position: relative;
-                    ul li a {
-                        padding: 12px 15px;
-                        font-size: 14px;
+                    top: 0;
+                    left: 0;
+                    position: fixed;
+                    &.open {
+                        height: 100vh;
+                    }
+                    ul {
+                        padding-top: 50px;
+                        font-size: 20px;
+                        li {
+                            height: 80px;
+                            border-top: solid 1px #3d3939;
+                            border-bottom: solid 1px #3d3939;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            a {
+                                padding: 0;
+                                text-align: center;
+                            }
+                        }
+                    }
+                    .close-btn {
+                        display: flex;
+                        position: absolute;
+                        bottom: 30px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 40px;
+                        height: 40px;
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        justify-content: center;
+                        align-items: center;
+                        span {
+                            position: absolute;
+                            width: 30px;
+                            height: 3px;
+                            background-color: whitesmoke;
+                            border-radius: 2px;
+                            transition: all 0.3s ease;
+                            &:nth-child(1) {
+                                transform: rotate(45deg);
+                            }
+                            &:nth-child(2) {
+                                transform: rotate(-45deg);
+                            }
+                        }
+                        &:hover span {
+                            background-color: rgb(200, 200, 200);
+                        }
                     }
                 }
             }
@@ -448,6 +511,7 @@
                 }
             }
             .burgermain {
+                z-index: 999;
                 width: 150px;
             }
         }
