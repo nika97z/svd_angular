@@ -2,12 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>SVD pixel</title>
+  <title>SVD Pixel | Websites That Perform</title>
+  <meta name="description" content="Beautiful, responsive websites and Shopify stores designed to turn visitors into customers.">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://svdpixel.com/">
+  <meta property="og:title" content="SVD Pixel | Websites That Perform">
+  <meta property="og:description" content="Beautiful, responsive websites and Shopify stores designed to turn visitors into customers.">
+  <meta property="og:image" content="https://svdpixel.com/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SVD Pixel | Websites That Perform">
+  <meta name="twitter:description" content="Beautiful, responsive websites and Shopify stores designed to turn visitors into customers.">
+  <meta name="twitter:image" content="https://svdpixel.com/og-image.png">
+
+  <style>
+    #app-loader {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      z-index: 999999;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    #app-loader.app-loader--hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    #app-loader .app-loader__spinner {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 3px solid rgba(111, 23, 179, 0.2);
+      border-top-color: rgb(111, 23, 179);
+      animation: app-loader-spin 0.8s linear infinite;
+    }
+
+    @keyframes app-loader-spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
+  <div id="app-loader" aria-hidden="true">
+    <div class="app-loader__spinner"></div>
+  </div>
+
   <app-root></app-root>
 
    <iframe
@@ -21,12 +69,10 @@
     window.addEventListener('message', function (e) {
       var iframe = document.getElementById('chatbot-iframe');
       if (e.data === 'chat-open') {
-        iframe.style.width = '460px';
-        iframe.style.height = '620px';
+        iframe.classList.add('chatbot-iframe--open');
       }
       if (e.data === 'chat-closed') {
-        iframe.style.width = '120px';
-        iframe.style.height = '155px';
+        iframe.classList.remove('chatbot-iframe--open');
       }
     });
   </script>

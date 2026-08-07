@@ -21,4 +21,18 @@ html, body {
     z-index: 2147483647;
     background: transparent;
     transition: width 0.2s ease, height 0.2s ease;
+
+    &.chatbot-iframe--open {
+        width: 460px;
+        height: 620px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #chatbot-iframe.chatbot-iframe--open {
+        width: calc(100vw - 20px);
+        height: min(620px, 85vh);
+        right: 10px;
+        bottom: 10px;
+    }
 }

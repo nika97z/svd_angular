@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "/": {},
+    "/ai-automatization": {},
+    "/chatbot": {},
+    "/contact": {},
+    "/ui/ux_design": {},
+    "/web-development": {}
+  }
+}

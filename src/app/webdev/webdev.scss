@@ -347,14 +347,23 @@
                 gap: 30px;
                 padding-top: 20px;
                 .main2{
-                    flex-direction: row;
-                    flex-wrap: wrap;
+                    flex-direction: column;
                     padding-right: 20px;
                     .main21{
-                        font-size: 35px;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        font-size: clamp(20px, 7vw, 30px);
+                        p{
+                            flex-shrink: 0;
+                        }
                     }
                     .main22{
-                        font-size: 35px;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        font-size: clamp(20px, 7vw, 30px);
+                        p{
+                            flex-shrink: 0;
+                        }
                     }
                 }
             }
