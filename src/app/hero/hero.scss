@@ -157,11 +157,11 @@
                     z-index: 6;
             }
         }
-        path {
+        path, .wraper_1 svg pattern rect {
             transition: stroke 0.4s ease;
         }
-        &:hover path{
-            stroke: #9e2f2f;
+        &:hover path, &:hover .wraper_1 svg pattern rect{
+            stroke: #ff2e2e;
         }
         a{
             text-decoration: none;
@@ -206,7 +206,7 @@
 
 @media screen and (max-width: 899px) {
     .serv .ser {
-        &:hover path{
+        &:hover path, &:hover .wraper_1 svg pattern rect{
             stroke: revert;
         }
         .explore:hover{
