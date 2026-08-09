@@ -93,7 +93,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     touch-action: pan-y;
-    background-color: #000;
+    background-color: #171717;
     .circle {
         position: absolute;
         z-index: 455;
@@ -204,6 +204,19 @@
     }
 }
 
+@media screen and (max-width: 899px) {
+    .serv .ser {
+        &:hover path{
+            stroke: revert;
+        }
+        .explore:hover{
+            background:
+                linear-gradient(rgb(39, 39, 39), rgb(39, 39, 39)) padding-box,
+                linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(65,65,65,0.4), rgba(255,255,255,0.35)) border-box;
+        }
+    }
+}
+
 @media screen and (max-width: 400px){
     .vidholder{
         display: flex;
@@ -257,14 +270,6 @@
             }
             .web_header{
                 font-size: 1.3rem;
-            }
-            .explore:hover{
-                background:
-                    linear-gradient(rgb(39, 39, 39), rgb(39, 39, 39)) padding-box,
-                    linear-gradient(to bottom, rgba(255,255,255,0.35), rgba(65,65,65,0.4), rgba(255,255,255,0.35)) border-box;
-            }
-            &:hover path{
-                stroke: revert;
             }
         }
         .circle{
